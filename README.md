@@ -1,6 +1,3 @@
-[![NPM version](https://badgen.net/npm/v/react-native-internet-speed)](https://www.npmjs.com/package/react-native-internet-speed)
-[![NPM download week](https://badgen.net/npm/dw/react-native-internet-speed)](https://www.npmjs.com/package/react-native-internet-speed)
-
 # react-native-internet-speed
 
 - This module can obtain the network speed of the current device. Since I don't know much about app development, there may be many bugs and I haven't had time to solve them yet, so use it with caution. <br/>
