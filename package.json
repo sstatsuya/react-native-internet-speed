@@ -1,0 +1,25 @@
+{
+  "name": "react-native-internet-speed",
+  "version": "1.0.0",
+  "description": "get network speed for IOS, Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sstatsuya/react-native-internet-speed"
+  },
+  "author": "sstatsuya",
+  "keywords": [
+    "react-native",
+    "network",
+    "speed",
+    "traffic"
+  ],
+  "homepage": "https://github.com/sstatsuya/react-native-internet-speed",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}
