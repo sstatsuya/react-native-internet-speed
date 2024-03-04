@@ -1,18 +1,19 @@
 # react-native-internet-speed
 
-- This module can obtain the network speed of the current device. Since I don't know much about app development, there may be many bugs and I haven't had time to solve them yet, so use it with caution. <br/>
-- Android can obtain the network speed of the entire phone and the current `app`, while `ios` can currently only obtain the network speed of the entire phone. After searching online for `ios` for a long time, I could not find a method that can accurately count the network speed of a single `app`.
-- this module can show the network speed.
+- This module can obtain the network speed of the current device.
 - for IOS : currently only the network speed of the entire device can be obtained
-- I am not good at developing apps ☹
 
 ## Getting started
 
-`$ npm install react-native-internet-speed --save`
+`npm install react-native-internet-speed --save`
+
+or
+
+`yarn add react-native-internet-speed`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-internet-speed`
+`react-native link react-native-internet-speed`
 
 ### Manual installation
 
