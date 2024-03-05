@@ -28,7 +28,7 @@ or
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
    - Add `import com.sstatsuya.internetspeed.RNInternetSpeedPackage;` to the imports at the top of the file
-   - Add `new RNNetworkSpeedPackage()` to the list returned by the `getPackages()` method
+   - Add `new RNInternetSpeedPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
    ```
    include ':react-native-internet-speed'
@@ -44,7 +44,7 @@ or
 ```javascript
 import InternetSpeed from "react-native-internet-speed";
 // start
-InternetSpeed.startListenNetworkSpeed(
+InternetSpeed.startListenInternetSpeed(
   ({
     downLoadSpeed,
     downLoadSpeedCurrent,
@@ -58,5 +58,5 @@ InternetSpeed.startListenNetworkSpeed(
   }
 );
 // stop
-InternetSpeed.stopListenNetworkSpeed();
+InternetSpeed.stopListenInternetSpeed();
 ```
