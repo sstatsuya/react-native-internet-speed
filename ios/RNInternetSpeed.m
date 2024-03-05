@@ -19,7 +19,7 @@ RCT_EXPORT_METHOD(findEvents:(RCTResponseSenderBlock)callback) {
     callback(@[[NSNull null], events]);
 };
 
-RCT_EXPORT_METHOD(startListenNetworkSpeed) {
+RCT_EXPORT_METHOD(startListenInternetSpeed) {
     if(timer == nil) {
         timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(getNetworkTraffic) userInfo:nil repeats:true];
         [NSObject initCheck];
@@ -27,7 +27,7 @@ RCT_EXPORT_METHOD(startListenNetworkSpeed) {
     }
 }
 
-RCT_EXPORT_METHOD(stopListenNetworkSpeed) {
+RCT_EXPORT_METHOD(stopListenInternetSpeed) {
     if(timer) {
         [timer invalidate];
         timer = nil;

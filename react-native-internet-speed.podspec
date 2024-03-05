@@ -13,14 +13,10 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
-  s.subspec "RCTNodeMediaClient" do |ss|
+  s.subspec "RNInternetSpeed" do |ss|
     ss.source_files  = "ios/*.{h,m}"
     s.static_framework = true
   end
 
   s.dependency "React"
-
-  # s.dependency "NodeMediaClient", '2.9.6'
-
-  # s.default_subspec = "RCTNodeMediaClient"
 end
