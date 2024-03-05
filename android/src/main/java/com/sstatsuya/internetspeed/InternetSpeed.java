@@ -1,9 +1,9 @@
-package com.xh.networkspeed;
+package com.sstatsuya.internetspeed;
 
 import android.net.TrafficStats;
 
-public class NetworkSpeed {
-    private static final String TAG = NetworkSpeed.class.getSimpleName();
+public class InternetSpeed {
+    private static final String TAG = InternetSpeed.class.getSimpleName();
     private long lastTotalRxBytes = 0;
     private long lastTimeStamp = 0;
 

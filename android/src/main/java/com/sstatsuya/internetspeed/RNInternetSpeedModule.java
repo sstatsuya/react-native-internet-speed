@@ -1,5 +1,5 @@
 
-package com.xh.networkspeed;
+package com.sstatsuya.internetspeed;
 
 import android.os.Handler;
 import android.os.Message;
@@ -20,12 +20,12 @@ import javax.annotation.Nullable;
 
 import static android.content.ContentValues.TAG;
 
-public class RNNetworkSpeedModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
+public class RNInternetSpeedModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
 
   private final ReactApplicationContext reactContext;
-  private NetworkSpeedTimer mNetworkSpeedTimer;
+  private InternetSpeedTimer mInternetSpeedTimer;
 
-  public RNNetworkSpeedModule(ReactApplicationContext reactContext) {
+  public RNInternetSpeedModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
   }
@@ -51,16 +51,16 @@ public class RNNetworkSpeedModule extends ReactContextBaseJavaModule implements 
   }
 
   @ReactMethod
-  public void startListenNetworkSpeed() {
+  public void startListenInternetSpeed() {
     //创建NetSpeedTimer实例
-    mNetworkSpeedTimer = new NetworkSpeedTimer(reactContext, new NetworkSpeed(), new mHandler(reactContext)).setDelayTime(1000).setPeriodTime(2000);
+    mInternetSpeedTimer = new InternetSpeedTimer(reactContext, new InternetSpeed(), new mHandler(reactContext)).setDelayTime(1000).setPeriodTime(2000);
     //在想要开始执行的地方调用该段代码
-    mNetworkSpeedTimer.startSpeedTimer();
+    mInternetSpeedTimer.startSpeedTimer();
   }
 
   @ReactMethod
-  public void stopListenNetworkSpeed() {
-    mNetworkSpeedTimer.stopSpeedTimer();
+  public void stopListenInternetSpeed() {
+    mInternetSpeedTimer.stopSpeedTimer();
   }
 
   // 处理定时器消息
@@ -75,8 +75,8 @@ public class RNNetworkSpeedModule extends ReactContextBaseJavaModule implements 
     @Override
     public void handleMessage(Message msg) {
       super.handleMessage(msg);
-      if (msg.what == NetworkSpeedTimer.NET_SPEED_TIMER_DEFAULT){
-        NetworkSpeed.NetSpeedResult res = (NetworkSpeed.NetSpeedResult) msg.obj;
+      if (msg.what == InternetSpeedTimer.NET_SPEED_TIMER_DEFAULT){
+        InternetSpeed.NetSpeedResult res = (InternetSpeed.NetSpeedResult) msg.obj;
 
         String downLoadSpeed = res.getDownLoadSpeed();
         String downLoadSpeedUri = res.getDownLoadSpeedUid();
@@ -90,12 +90,12 @@ public class RNNetworkSpeedModule extends ReactContextBaseJavaModule implements 
         params.putString("upLoadSpeed", upLoadSpeed);
         params.putString("upLoadSpeedCurrent", upLoadSpeedUri);
 
-        sendNetworkSpeed(reactContext, "onSpeedUpdate", params);
+        sendInternetSpeed(reactContext, "onSpeedUpdate", params);
 //        Log.i(TAG, "current net speed  = " + downLoadSpeed);
       }
     }
 
-    private void sendNetworkSpeed(ReactContext reactContext,
+    private void sendInternetSpeed(ReactContext reactContext,
                                   String eventName,
                                   @Nullable WritableMap params) {
       reactContext

@@ -21,13 +21,13 @@ or
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `react-native-internet-speed` and add `RNInternetSpeed.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNNetworkSpeed.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+3. In XCode, in the project navigator, select your project. Add `libRNInternetSpeed.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-   - Add `import com.xh.networkspeed.RNNetworkSpeedPackage;` to the imports at the top of the file
+   - Add `import com.sstatsuya.internetspeed.RNInternetSpeedPackage;` to the imports at the top of the file
    - Add `new RNNetworkSpeedPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
    ```

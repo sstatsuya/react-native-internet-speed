@@ -1,4 +1,4 @@
-package com.xh.networkspeed;
+package com.sstatsuya.internetspeed;
 
 import android.content.Context;
 import android.os.Handler;
@@ -8,35 +8,35 @@ import android.util.Log;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class NetworkSpeedTimer {
+public class InternetSpeedTimer {
     private long defaultDelay = 1000;
     private long defaultPeriod = 1000;
     private static final int ERROR_CODE = -101011010;
     private int mMsgWhat = ERROR_CODE;
-    private NetworkSpeed mNetSpeed;
+    private InternetSpeed mNetSpeed;
     private Handler mHandler;
     private Context mContext;
     private SpeedTimerTask mSpeedTimerTask;
 
     public static final int NET_SPEED_TIMER_DEFAULT = 101010;
 
-    public NetworkSpeedTimer(Context context, NetworkSpeed netSpeed, Handler handler) {
+    public InternetSpeedTimer(Context context, InternetSpeed netSpeed, Handler handler) {
         this.mContext = context;
         this.mNetSpeed = netSpeed;
         this.mHandler = handler;
     }
 
-    public NetworkSpeedTimer setDelayTime(long delay) {
+    public InternetSpeedTimer setDelayTime(long delay) {
         this.defaultDelay = delay;
         return this;
     }
 
-    public NetworkSpeedTimer setPeriodTime(long period) {
+    public InternetSpeedTimer setPeriodTime(long period) {
         this.defaultPeriod = period;
         return this;
     }
 
-    public NetworkSpeedTimer setHanderWhat(int what) {
+    public InternetSpeedTimer setHanderWhat(int what) {
         this.mMsgWhat = what;
         return this;
     }
@@ -66,11 +66,11 @@ public class NetworkSpeedTimer {
      */
     private static class SpeedTimerTask extends TimerTask {
         private int mMsgWhat;
-        private NetworkSpeed mNetSpeed;
+        private InternetSpeed mNetSpeed;
         private Handler mHandler;
         private Context mContext;
 
-        public SpeedTimerTask(Context context, NetworkSpeed netSpeed,
+        public SpeedTimerTask(Context context, InternetSpeed netSpeed,
                               Handler handler, int what) {
             this.mContext = context;
             this.mHandler = handler;

@@ -1,5 +1,5 @@
 
-package com.xh.networkspeed;
+package com.sstatsuya.internetspeed;
 
 import java.util.Arrays;
 import java.util.Collections;
