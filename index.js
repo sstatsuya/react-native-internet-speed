@@ -9,6 +9,7 @@ const { RNInternetSpeed } = NativeModules;
 
 let defualtCallback = null;
 let eventEmitter = null;
+let eventInstance = null;
 
 class InternetSpeed {
   static startListenInternetSpeed(callback) {
@@ -25,14 +26,15 @@ class InternetSpeed {
     // Initialize monitoring and call native code to start timer and monitoring
     RNInternetSpeed.startListenInternetSpeed();
     defualtCallback = callback;
-    eventEmitter.addListener("onSpeedUpdate", defualtCallback);
+    eventInstance = eventEmitter.addListener("onSpeedUpdate", defualtCallback);
   }
 
   static stopListenInternetSpeed() {
     if (!defualtCallback && typeof defualtCallback !== "function") return;
     if (eventEmitter && eventEmitter instanceof NativeEventEmitter) {
       RNInternetSpeed.stopListenInternetSpeed();
-      eventEmitter.removeListener("onSpeedUpdate", defualtCallback);
+      // eventEmitter.removeListener("onSpeedUpdate", defualtCallback);
+      eventInstance.remove();
       defualtCallback = null;
       eventEmitter = null;
     }
